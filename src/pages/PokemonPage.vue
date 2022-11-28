@@ -1,11 +1,15 @@
 <template>
-  <h1>¿Quien es este Pokémon?</h1>
+  <h1 v-if="!pokemon">Cargando...</h1>
 
-  <!--Picture-->
-  <PokemonPicture :pokemonId="4" :showPokemon="true" />
+  <div v-else>
+    <h1>¿Quien es este Pokémon?</h1>
 
-  <!--Options-->
-  <PokemonOptions />
+    <!--Picture-->
+    <PokemonPicture :pokemonId="pokemon.id" :showPokemon="true" />
+
+    <!--Options-->
+    <PokemonOptions :pokemons="pokemonArr" />
+  </div>
 
 </template>
 
@@ -15,12 +19,27 @@ import PokemonOptions from '@/components/PokemonOptions'
 
 import getPokemonOptions from '@/helpers/getPokemonOptions'
 
-// console.log(getPokemonOptions())
-
 export default {
   components: {
     PokemonPicture,
     PokemonOptions
+  },
+  data() {
+    return {
+      pokemonArr: [],
+      pokemon: null
+    }
+  },
+  methods: {
+    async mixPokemonArray() {
+      this.pokemonArr = await getPokemonOptions()
+
+      const rndInt = Math.floor(Math.random() * 4)
+      this.pokemon = this.pokemonArr[rndInt]
+    }
+  },
+  mounted() {
+    this.mixPokemonArray()
   }
 }
 </script>
