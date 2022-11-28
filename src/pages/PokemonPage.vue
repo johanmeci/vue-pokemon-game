@@ -5,10 +5,11 @@
     <h1>¿Quien es este Pokémon?</h1>
 
     <!--Picture-->
-    <PokemonPicture :pokemonId="pokemon.id" :showPokemon="true" />
+    <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon" />
 
     <!--Options-->
-    <PokemonOptions :pokemons="pokemonArr" />
+    <!-- @selection-pokemon / @selectionPokemon -->
+    <PokemonOptions :pokemons="pokemonArr" @selection-pokemon="checkAnswer" />
   </div>
 
 </template>
@@ -27,7 +28,8 @@ export default {
   data() {
     return {
       pokemonArr: [],
-      pokemon: null
+      pokemon: null,
+      showPokemon: false
     }
   },
   methods: {
@@ -36,6 +38,9 @@ export default {
 
       const rndInt = Math.floor(Math.random() * 4)
       this.pokemon = this.pokemonArr[rndInt]
+    },
+    checkAnswer(pokemonId) {
+      this.showPokemon = true
     }
   },
   mounted() {
