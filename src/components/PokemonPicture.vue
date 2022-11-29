@@ -16,24 +16,24 @@
 </template>
 
 <script>
-export default {
-  props: {
-    pokemonId: {
-      type: Number,
-      required: true
+  export default {
+    props: {
+      pokemonId: {
+        type: Number,
+        required: true
+      },
+      showPokemon: {
+        type: Boolean,
+        required: true,
+        default: false
+      }
     },
-    showPokemon: {
-      type: Boolean,
-      required: true,
-      default: false
-    }
-  },
-  computed: {
-    imgSrc() {
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`
+    computed: {
+      imgSrc() {
+        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`
+      }
     }
   }
-}
 </script>
 
 <!--scope -> solo aplica el estilo al componente-->
@@ -47,8 +47,12 @@ export default {
   }
 
   img {
-    height: 200px;
+    display: block;
     position: absolute;
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    margin-top: 1em;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

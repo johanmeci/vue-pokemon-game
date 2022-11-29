@@ -27,15 +27,25 @@ export default {
   ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 10px;
   }
 
   li {
     background-color: white;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
     cursor: pointer;
-    margin-bottom: 10px;
-    width: 250px;
+    width: 100%;
+    height: 35px;
+    transition: all 320ms ease-in-out;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   li:hover {
@@ -45,5 +55,6 @@ export default {
   .options-container {
     display: flex;
     justify-content: center;
+    margin-top: auto;
   }
 </style>
