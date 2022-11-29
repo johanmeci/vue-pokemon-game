@@ -31,25 +31,26 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px 10px;
+    gap: 15px;
   }
 
   li {
-    background-color: white;
     border-radius: 25px;
     cursor: pointer;
     width: 100%;
-    height: 35px;
+    height: 32px;
     transition: all 320ms ease-in-out;
     font-weight: 600;
     text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 1px 2px 2px rgb(0 0 0 / 30%);
+    background-color: #f1f1f1;
   }
 
   li:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #f9f7f7;
   }
 
   .options-container {

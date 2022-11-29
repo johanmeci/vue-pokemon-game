@@ -97,5 +97,13 @@
 
   button {
     cursor: pointer;
+    height: 35px;
+    border-radius: 25px;
+    font-family: 'Anek Devanagari', Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    width: 150px;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 2px 2px rgb(0 0 0 / 30%);
   }
 </style>
