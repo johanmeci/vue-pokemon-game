@@ -2,7 +2,7 @@
   <h1 v-if="!pokemon">Cargando...</h1>
 
   <div v-else>
-    <h1>¿Quien es este Pokémon?</h1>
+    <h1>¿Quién es este Pokémon?</h1>
 
     <div class="pokegame-container">
     
