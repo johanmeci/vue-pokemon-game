@@ -80,6 +80,10 @@
 </script>
 
 <style>
+  h1 {
+    margin-top: 0;
+  }
+
   .pokegame-container {
     border: 1px solid #ffffff00;
     border-radius: 15px;
@@ -89,10 +93,8 @@
     flex-direction: column;
     margin: 2em auto auto auto;
     padding: 1em 1em 1.5em 1em;
-    background-image: url('https://i.pinimg.com/originals/ea/1d/5b/ea1d5bb4dc48f7bf0ac30e8596687be7.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
+    background: url('../assets/background_pokeball.png') no-repeat top center / cover;
+    box-shadow: 1px 2px 2px rgb(0 0 0 / 7%);
   }
 
   button {
